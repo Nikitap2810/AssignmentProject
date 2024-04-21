@@ -1,4 +1,3 @@
-// Import necessary components and libraries
 import React from 'react';
 import {
   StyleSheet,
@@ -13,7 +12,6 @@ import {useDispatch, useSelector} from 'react-redux';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {setAddressList} from '../redux/reducer/address';
 
-// Define the ThirdScreen component
 const ThirdScreen = ({navigation}) => {
   const {addressList} = useSelector(state => state.address);
   const dispatch = useDispatch();
@@ -41,7 +39,6 @@ const ThirdScreen = ({navigation}) => {
   };
 
   return (
-    // Use ImageBackground component with uri prop to set background image
     <ImageBackground
       style={styles.container}
       source={{uri: 'https://source.unsplash.com/random/800x600'}}>
@@ -138,7 +135,6 @@ const ThirdScreen = ({navigation}) => {
   );
 };
 
-// Define component styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
