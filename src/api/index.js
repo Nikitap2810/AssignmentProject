@@ -14,6 +14,6 @@ export const loginApi = async payload => {
 const token = async () => {
   // Authorization token
   console.log('resp', store.getState().user.loginToken);
-  api.defaults.headers['Authorization'] = `${store.getState().user.loginToken}`;
+  api.defaults.headers['Authorization'] = `token`;
   console.log('a', api);
 };
