@@ -10,6 +10,7 @@ import SecondScreen from './src/screens/SecondScreen';
 import { store } from './src/redux/store';
 import {Provider as StoreProvider, useSelector} from 'react-redux';
 import ThirdScreen from './src/screens/ThirdScreen';
+import StackNavigation from './src/navigtion/StackNavigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,16 +19,7 @@ const App = () => {
     <View style={{backgroundColor:"#FFF", flex:1}}>
        <StoreProvider store={store}>
      
-          <NavigationContainer>
-          <Stack.Navigator
-              screenOptions={{headerShown: false}}
-              >
-              <Stack.Screen name="Splash" component={SplashScreen} />
-              <Stack.Screen name="FirstPage" component={FirstScreen} />
-              <Stack.Screen name="SecondPage" component={SecondScreen} />
-              <Stack.Screen name="ThirdPage" component={ThirdScreen} />
-              </Stack.Navigator>
-            </NavigationContainer>
+        <StackNavigation/>
             <FlashMessage position="top" />
          
             </StoreProvider>

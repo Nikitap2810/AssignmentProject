@@ -65,6 +65,7 @@ const FirstScreen = ({navigation}) => {
               onChangeText={text => setNumber(text)}
               value={number}
               style={styles.input}
+              placeholderTextColor={'#111'}
             />
             <TextInput
               placeholder="Enter sum of digits"
@@ -72,6 +73,7 @@ const FirstScreen = ({navigation}) => {
               onChangeText={text => setSum(text)}
               value={sum}
               style={styles.input}
+              placeholderTextColor={'#111'}
             />
 
             <TouchableOpacity
@@ -134,7 +136,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 12,
     fontSize: 16,
-    color: '#333',
+    color: '#000',
     backgroundColor: '#FFF',
   },
   button: {

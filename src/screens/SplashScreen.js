@@ -15,7 +15,7 @@ const SplashScreen = ({navigation}) => {
         navigation.reset({
           routes: [
             {
-              name: 'FirstPage',
+              name: 'BottomTab',
             },
           ],
         });

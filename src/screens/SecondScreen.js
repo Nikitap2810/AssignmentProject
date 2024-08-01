@@ -14,6 +14,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import {formData} from '../config/formdata';
 import {useDispatch, useSelector} from 'react-redux';
 import {setAddressList} from '../redux/reducer/address';
+import LinearGradient from 'react-native-linear-gradient';
 
 const SecondScreen = ({navigation, route}) => {
   const {addressList} = useSelector(state => state.address);
@@ -104,35 +105,7 @@ const SecondScreen = ({navigation, route}) => {
   };
 
   return (
-    <View style={{flex: 1, backgroundColor: '#FFFFFF'}}>
-      <View style={{...styles.header}}>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={() => navigation.goBack()}
-          style={{
-            padding: 5,
-            borderWidth: 1,
-            marginLeft: 15,
-            borderRadius: 100,
-            borderColor: '#FfFfff',
-          }}>
-          <MaterialCommunityIcons
-            size={25}
-            color={'#FFFFFF'}
-            name={'arrow-left'}
-          />
-        </TouchableOpacity>
-        <Text
-          style={{
-            color: '#ffffff',
-            marginLeft: 25,
-            fontSize: 16,
-            fontWeight: '700',
-          }}>
-          Address Form
-        </Text>
-      </View>
-
+    <LinearGradient colors={['#FF7E5F', '#FFB64C']} style={{flex: 1}}>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{padding: 15, paddingBottom: 50}}>
@@ -142,6 +115,7 @@ const SecondScreen = ({navigation, route}) => {
           value={formValues.addressType}
           onChangeText={text => handleFormValueChange('addressType', text)}
           placeholder="Home/Work/Other"
+          placeholderTextColor={'#111'}
         />
 
         <Text style={styles.label}>PlotNumber:</Text>
@@ -150,6 +124,7 @@ const SecondScreen = ({navigation, route}) => {
           value={formValues.plotNumber}
           onChangeText={text => handleFormValueChange('plotNumber', text)}
           placeholder="PlotNumber"
+          placeholderTextColor={'#111'}
         />
 
         <Text style={styles.label}>Address:</Text>
@@ -158,6 +133,7 @@ const SecondScreen = ({navigation, route}) => {
           value={formValues.address}
           onChangeText={text => handleFormValueChange('address', text)}
           placeholder="Address"
+          placeholderTextColor={'#111'}
         />
 
         <Text style={styles.label}>Landmark:</Text>
@@ -166,14 +142,17 @@ const SecondScreen = ({navigation, route}) => {
           value={formValues.landmark}
           onChangeText={text => handleFormValueChange('landmark', text)}
           placeholder="Landmark"
+          placeholderTextColor={'#111'}
         />
 
         <Text style={styles.label}>Pincode:</Text>
         <TextInput
           style={styles.input}
           value={formValues.pincode}
+          keyboardType="number-pad"
           onChangeText={text => handleFormValueChange('pincode', text)}
           placeholder="Pincode"
+          placeholderTextColor={'#111'}
         />
 
         <Text style={styles.label}>City:</Text>
@@ -182,6 +161,7 @@ const SecondScreen = ({navigation, route}) => {
           value={formValues.city}
           onChangeText={text => handleFormValueChange('city', text)}
           placeholder="City"
+          placeholderTextColor={'#111'}
         />
 
         <Text style={styles.label}>State:</Text>
@@ -190,6 +170,7 @@ const SecondScreen = ({navigation, route}) => {
           value={formValues.state}
           onChangeText={text => handleFormValueChange('state', text)}
           placeholder="State"
+          placeholderTextColor={'#111'}
         />
 
         <Text style={styles.label}>Country:</Text>
@@ -198,6 +179,7 @@ const SecondScreen = ({navigation, route}) => {
           value={formValues.country}
           onChangeText={text => handleFormValueChange('country', text)}
           placeholder="Country"
+          placeholderTextColor={'#111'}
         />
 
         <TouchableOpacity
@@ -206,12 +188,12 @@ const SecondScreen = ({navigation, route}) => {
           activeOpacity={0.8}
           style={styles.button}>
           {isLoading ? (
-            <ActivityIndicator color="#FFFFFF" style={styles.buttonIcon} />
+            <ActivityIndicator color="#FF6F61" style={styles.buttonIcon} />
           ) : null}
           <Text style={styles.buttonText}>Submit</Text>
         </TouchableOpacity>
       </ScrollView>
-    </View>
+    </LinearGradient>
   );
 };
 
@@ -220,30 +202,25 @@ export default SecondScreen;
 const styles = StyleSheet.create({
   container: {
     borderWidth: 1,
-    borderColor: '#DADADA',
+    borderColor: '#FFFFFF',
     padding: 15,
     borderRadius: 15,
     marginVertical: 10,
   },
-  header: {
-    backgroundColor: '#00A9E0',
-    paddingVertical: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
   label: {
     fontSize: 16,
     marginBottom: 5,
+    color: '#FFF',
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: '#FFF',
     borderRadius: 5,
     padding: 10,
-    marginBottom: 10,
+    marginBottom: 15,
   },
   button: {
-    backgroundColor: '#00A9E0',
+    backgroundColor: '#FFFFFF',
     borderRadius: 5,
     marginTop: 15,
     paddingVertical: 15,
@@ -252,7 +229,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   buttonText: {
-    color: '#FFFFFF',
+    color: '#FF6F61',
     fontSize: 16,
     fontWeight: 'bold',
   },
